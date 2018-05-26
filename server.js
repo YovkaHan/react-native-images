@@ -6,8 +6,8 @@ const app = express();
 const path = require('path');
 const http = require('http').Server(app);
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 8080,
-    ip = process.env.IP || '0.0.0.0';
+const port = process.env.port || 8080,
+    ip = process.env.proxy || '0.0.0.0';
 
 const https = require('https');
 const parseHtml = require('node-html-parser').parse;

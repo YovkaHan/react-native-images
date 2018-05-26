@@ -10,6 +10,8 @@ import {
 
 const proxy = process.env['proxy'];
 
+const port = process.env['port'];
+
 export default class App extends Component {
     constructor() {
         super();
@@ -22,7 +24,7 @@ export default class App extends Component {
 
     handleSearchQuery = () => {
         const {images, searchFor} = this.state;
-        fetch(`${proxy}/images/${searchFor}`)
+        fetch(`${proxy}:${port}/images/${searchFor}`)
             .then((res) => res.json())
             .then((result) => {
                 this.setState({
